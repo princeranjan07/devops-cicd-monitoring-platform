@@ -1,0 +1,28 @@
+{
+  "annotations":{"list":[]},
+  "editable":true,
+  "gnetId":null,
+  "graphTooltip":0,
+  "panels":[
+    {
+      "type":"timeseries",
+      "title":"p99 /api/hello",
+      "targets":[
+        {
+          "expr":"histogram_quantile(0.99, sum(rate(http_latency_seconds_bucket{path=\"/api/hello\"}[1m])) by (le))",
+          "legendFormat":"p99"
+        }
+      ]
+    },
+    {
+      "type":"timeseries",
+      "title":"Error rate (пример)",
+      "targets":[
+        { "expr":"rate(http_requests_total{status!=\"200\"}[1m])", "legendFormat":"non-200 rps" }
+      ]
+    }
+  ],
+  "schemaVersion":37,
+  "title":"Demo API",
+  "version":1
+}

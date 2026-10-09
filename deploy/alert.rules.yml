@@ -1,0 +1,11 @@
+groups:
+- name: app-latency
+  rules:
+  - alert: ApiHighLatencyP99
+    expr: histogram_quantile(0.99, sum(rate(http_latency_seconds_bucket{path="/api/hello"}[1m])) by (le)) > 0.8
+    for: 2m
+    labels:
+      severity: page
+    annotations:
+      summary: "p99 > 800ms for /api/hello"
+      runbook: "https://docs.com/runbooks/latency.md"
