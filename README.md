@@ -1,3 +1,4 @@
+
 # DevOps Portfolio Demo: CI/CD + Metrics + Alerting + Rollback
 
 This repository contains a minimal but realistic DevOps showcase project designed to demonstrate core skills:
@@ -140,3 +141,5 @@ Replace placeholders with your data:
 ## 9. License
 
 MIT
+# devops-cicd-monitoring-platform
+Docker, CI/CD , monitoring and alerting portfolio project
